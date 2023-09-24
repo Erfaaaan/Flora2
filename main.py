@@ -25,7 +25,10 @@ class AIModel:
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-
+    
+@app.get("/uploadfiles/")
+async def get_upload():
+    return {"message": "Hello World"}
 
 @app.post("/uploadfiles/")
 async def upload_files(image_string: str = Form(...)):
