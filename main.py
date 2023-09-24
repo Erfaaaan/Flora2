@@ -26,7 +26,5 @@ class AIModel:
 async def root():
     return {"message": "Hello World"}
     
-@app.get("/uploadfiles/")
-async def get_upload():
-    return {"message": "Hello World"}
+
 
