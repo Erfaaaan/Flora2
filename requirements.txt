@@ -3,5 +3,4 @@ uvicorn[standard]
 pydantic
 numpy
 opencv-python-headless
-base64
 json
