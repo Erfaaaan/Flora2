@@ -88,6 +88,17 @@ class AIModel:
             "result_data": json_str
         }
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.get("/favicon.ico")
+async def favicon():
+    return Response(status_code=204)
+
+
+
 @app.post("/uploadfiles/")
 async def upload_files(image_string: str = Form(...)):
     # Decode the Base64 string
