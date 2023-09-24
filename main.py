@@ -32,7 +32,7 @@ async def upload():
     return {"message": "Hello World"}
     
 
-@app.post("/uploadfiles/")
+@app.post("/uploadfiles")
 async def upload_files(image_string: str = Body(...)):
     # Decode the Base64 string
     image_data = base64.b64decode(image_string)
