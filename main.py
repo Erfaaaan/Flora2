@@ -1,6 +1,6 @@
 
 
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body ,Form
 from pydantic import BaseModel
 import base64
 import json
@@ -33,7 +33,7 @@ async def upload():
     
 
 @app.post("/uploadfiles")
-async def upload_files():
+async def upload_files(image_string: str = Form(...)):
     return "done"
     # # Decode the Base64 string
     # image_data = base64.b64decode(image_string)
