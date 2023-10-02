@@ -3,4 +3,8 @@ uvicorn[standard]
 pydantic
 numpy
 opencv-python-headless
-
+torch
+detectron2
+roboflow
+matplotlib
+Pillow
