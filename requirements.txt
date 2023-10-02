@@ -4,7 +4,7 @@ pydantic
 numpy
 opencv-python-headless
 torch
-detectron2
+'git+https://github.com/facebookresearch/detectron2.git'
 roboflow
 matplotlib
 Pillow
