@@ -3,7 +3,8 @@ FROM python:3.8
 
 # Set the working directory inside the container
 WORKDIR /app
-
+# Torch
+RUN pip3.9 install torch
 # DED2
 FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 # use an older system (18.04) to avoid opencv incompatibility (issue#3524)
