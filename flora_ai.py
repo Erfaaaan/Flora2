@@ -206,4 +206,4 @@ def counting_flowers(im):
 
   json_data = json.dumps(dict_of_flowers)
 
-  return {"image":im , "jason_data":json_data}
+  return im ,json_data
