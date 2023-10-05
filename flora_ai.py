@@ -170,6 +170,7 @@ def counting_flowers(im):
   cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"))
   cfg.DATALOADER.NUM_WORKERS = 2
   cfg.MODEL.WEIGHTS = os.path.join("model_final_15.pth")
+  cfg.MODEL.DEVICE = 'cpu'  # Add this line to specify the device
   #cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml")  # Let training initialize from model zoo
   cfg.SOLVER.IMS_PER_BATCH = 2
   cfg.SOLVER.BASE_LR = 0.00025
@@ -182,6 +183,11 @@ def counting_flowers(im):
   PATIENCE = 500 #Early stopping will occur after N iterations of no imporovement in total_loss
 
   os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
+
+    # Convert the PIL image to a PyTorch tensor and move it to the CPU
+    im = torch.from_numpy(np.array(im)).permute(2, 0, 1).float()
+    im = im.to('cpu')
+
   cfg.MODEL.WEIGHTS = os.path.join("model_final_15.pth")  # path to the model we just trained
 
   cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.2   # set a custom testing threshold
