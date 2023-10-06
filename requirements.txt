@@ -6,4 +6,3 @@ opencv-python-headless
 roboflow
 matplotlib
 Pillow
-
